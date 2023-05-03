@@ -1,0 +1,35 @@
+<p>agendamentos works!</p>
+
+
+<div *ngFor="let agend of agendamento" >
+  <h3>See below your examn and local</h3>
+  <div id="box">
+  <p class="par"> <b class="title">Exame: </b> {{agend.exameName}}</p>
+  <p class="par"> <b class="title">Local: </b>{{agend.medico}}</p>
+  <p><a class="link-text" href="https://google.com/"><u> More infos Here !</u></a></p>
+  </div>
+</div>
+
+
+<style>
+  #box{
+    display: inline-block;
+    border: 3px solid rgb(73, 73, 73);
+    height: 100px;
+    width: 250px;
+    text-align: center;
+    background-color:rgb(136, 136, 230);
+    border-radius: 15px;
+  }
+
+  .title{
+    color: rgb(32, 51, 86);
+  }
+  .par{
+    color: white;
+  }
+
+  .link-text{
+    color: white;
+  }
+</style>
