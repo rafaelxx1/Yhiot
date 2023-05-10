@@ -38,6 +38,38 @@ namespace Yhiot.API.Data.Migrations
 
                     b.ToTable("agendamentos");
                 });
+
+            modelBuilder.Entity("Yhiot.API.Models.User", b =>
+                {
+                    b.Property<int>("userId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("data")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("userAut")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("userCpf")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("userEmail")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("userInterface")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("userName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("userPassword")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("userId");
+
+                    b.ToTable("users");
+                });
 #pragma warning restore 612, 618
         }
     }

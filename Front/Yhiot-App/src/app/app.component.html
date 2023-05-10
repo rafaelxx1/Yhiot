@@ -1,8 +1,48 @@
 
+<app-nav></app-nav>
 
 <div class="container">
   <h1>Agendamento</h1>
-  <app-agendamentos></app-agendamentos>
+  <hr>
+  <!--<app-agendamentos></app-agendamentos> -->
+  <app-login></app-login>
+  <form action="" class="form-inline">
+    <div class="form-group mb 2">
+      <input type="text" class="form-control mr-2" placeholder="Buscar">
+      <button class="btn btn-outline-success">
+        GO
+      </button>
+    </div>
+  </form>
+  <div style="margin-top: 10px;"></div>
+  <table class="table table-stripped">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th>Exame</th>
+        <th>Dr(a). Responsavel</th>
+        <th>Local</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+
+    <tbody *ngIf="agendamento" class="bg-light">
+        <tr *ngFor="let agend of agendamento">
+          <td>{{agend.agendamentoId}}</td>
+          <td>{{agend.exameName}}</td>
+          <td>{{agend.medico}}</td>
+          <td>Campinas</td>
+          <td>{{agend.dataAgendamento}}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+      <tr *ngIf="!agendamento">
+        <td colspan="8" class="text-center">
+          <h3>Nenhum agendamento encontrado</h3>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
 
   <router-outlet></router-outlet>
 </div>

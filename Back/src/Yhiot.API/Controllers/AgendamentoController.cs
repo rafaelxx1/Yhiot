@@ -18,7 +18,7 @@ public class EventoController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Agendamento> Get()
+    public IEnumerable<Agendamento>? Get()
     {
         return _context.agendamentos;
 
