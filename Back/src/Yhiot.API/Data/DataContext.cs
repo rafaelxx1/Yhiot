@@ -12,5 +12,6 @@ namespace Yhiot.API.Data
 
         public DataContext(DbContextOptions<DataContext> options) : base(options){}
         public DbSet<Agendamento>? agendamentos { get; set; }
+        public DbSet<User>? users {get; set;}
     }
 }
