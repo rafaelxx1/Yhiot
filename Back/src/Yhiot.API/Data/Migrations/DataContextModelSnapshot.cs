@@ -34,6 +34,9 @@ namespace Yhiot.API.Data.Migrations
                     b.Property<string>("cpf")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("foto")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("AgendamentoId");
 
                     b.ToTable("agendamentos");

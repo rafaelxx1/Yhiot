@@ -12,5 +12,6 @@ namespace Yhiot.API.Models
         public string? DataAgendamento {get; set; }
         public string? Medico {get; set;}
         public string? cpf {get; set; }
+        public string? foto {get; set; }
     }
 }

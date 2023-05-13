@@ -2,37 +2,51 @@
 <app-nav></app-nav>
 
 <div class="container">
-  <h1>Agendamento</h1>
+  <h1>Schedule</h1>
   <hr>
   <!--<app-agendamentos></app-agendamentos> -->
-  <app-login></app-login>
-  <form action="" class="form-inline">
+  <!--<app-login></app-login> -->
+  <div class="form-inline">
     <div class="form-group mb 2">
-      <input type="text" class="form-control mr-2" placeholder="Buscar">
-      <button class="btn btn-outline-success">
-        GO
-      </button>
+      <label class="mr-2">Search By:</label>
+      <input
+      type="text"
+      class="form-control mr-2"
+      placeholder="searching..."
+      [(ngModel)]="listFilter"
+      >
     </div>
-  </form>
+  </div>
+  <!--<h3>Filter: {{listFilter}}</h3> -->
   <div style="margin-top: 10px;"></div>
   <table class="table table-stripped">
     <thead class="thead-dark">
       <tr>
         <th>#</th>
-        <th>Exame</th>
-        <th>Dr(a). Responsavel</th>
+        <th><button (click)="alterImg()" class="btn btn-outline-light btn-sm">
+          {{showImg ? 'hide img' : 'show img'}}
+        </button></th>
+        <th>Dr(a).</th>
+        <th>Exam</th>
         <th>Local</th>
         <th>Data</th>
+        <th>Option</th>
       </tr>
     </thead>
 
     <tbody *ngIf="agendamento" class="bg-light">
-        <tr *ngFor="let agend of agendamento">
+        <tr *ngFor="let agend of agendamentoFilter">
           <td>{{agend.agendamentoId}}</td>
-          <td>{{agend.exameName}}</td>
+          <td>
+            <img [collapse]="!showImg"
+                  [isAnimated]="true"
+            class="img-foto" src="/assets/{{agend.foto}}" alt="">
+          </td>
           <td>{{agend.medico}}</td>
+          <td>{{agend.exameName}}</td>
           <td>Campinas</td>
           <td>{{agend.dataAgendamento}}</td>
+          <td><button class="btn btn-outline-primary">Join</button></td>
         </tr>
     </tbody>
     <tfoot>
