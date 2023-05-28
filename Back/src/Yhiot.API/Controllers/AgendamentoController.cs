@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Yhiot.API.Data;
-using Yhiot.API.Models;
+using Yhiot.Persistence;
+using Yhiot.Domain;
+using Yhiot.Persistence.Context;
 
 namespace Yhiot.API.Controllers;
 
@@ -9,9 +10,9 @@ namespace Yhiot.API.Controllers;
 public class EventoController : ControllerBase
 {
   
-        private readonly DataContext _context;
+        private readonly YhiotContext _context;
 
-    public EventoController(DataContext context)
+    public EventoController(YhiotContext context)
     {
             this._context = context;
 
@@ -27,7 +28,7 @@ public class EventoController : ControllerBase
     [HttpGet("{id}")]
     public Agendamento GetById(int id)
     {
-        return _context.agendamentos.FirstOrDefault(Agendamento => Agendamento.AgendamentoId == id);
+        return _context.agendamentos.FirstOrDefault(Agendamento => Agendamento.Id == id);
     }
 
     [HttpPost]
