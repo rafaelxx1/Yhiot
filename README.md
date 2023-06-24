@@ -1,4 +1,4 @@
-# YhiotApp - Your Health in one Touch
+# YhiotApp - Your Health in one Touch - [ It's stoppped for a while ]
 
 <p> By using this app, you get a lot of flexibility in your daily routine </p>
 
